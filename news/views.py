@@ -10,4 +10,3 @@ def index(request):
 def test(request):
     return HttpResponse("<h1>test page</h1> ")
 
-##check commit
