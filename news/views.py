@@ -8,5 +8,4 @@ def index(request):
     return render(request, 'news/index.html', {'news': news, 'title': 'Список новостей'})
 
 def test(request):
-    return HttpResponse("<h1>test page</h1>")
- 
+    return HttpResponse("<h1>test page</h1> ")
