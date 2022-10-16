@@ -32,9 +32,14 @@
                     Категория: {{ item.category }}
                   </div>
                   <div class="card-body">
-                    <h5 class="card-title">{{  item.title }}</h5>
-                    <p class="card-text">{{  item.content }}</p>
-                    <a href="/" class="btn btn-primary">Читать полностью</a>
+                    <div class="media">
+                      <img src="{{ item.photo.url }}" alt="">
+                      <div class="media-body">
+                        <h5 class="card-title">{{  item.title }}</h5>
+                        <p class="card-text">{{  item.content }}</p>
+                        <a href="/" class="btn btn-primary">Читать полностью</a>
+                      </div>
+                    </div>
                   </div>
                   <div class="card-footer text-muted">
                     {{  item.created_at|date:"Y-m-d H:i" }}
