@@ -1,8 +1,9 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, CreateView
 from .models import News, Category
 from .forms import NewsForm
+from django.urls import reverse_lazy
 
 # Create your views here.
 
@@ -39,6 +40,11 @@ class ViewNews(DetailView):
     context_object_name = 'news_item'
     #template_name = 'news/news_detail.html'
     #pk_url_kwarg = 'news_id'
+
+class CreateNews(CreateView):
+    form_class = NewsForm
+    template_name = 'news/add_news.html'
+    #success_url = reverse_lazy('home')
 
 def index(request):
     news = News.objects.all()

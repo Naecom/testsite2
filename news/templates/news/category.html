@@ -18,7 +18,11 @@
                   </div>
                   <div class="card-body">
                     <div class="media">
-                      <img src="{{ item.photo.url }}" alt="">
+                      {% if item.photo %}
+                      <img src="{{ item.photo.url }}" alt="" width="350" class="float-left mr-3">
+                      {% else %}
+                      <img src="https://static.wixstatic.com/media/3baccc_a6744d0d29d54f4ba5c0d4803810b0cd~mv2_d_4800_4502_s_4_2.png/v1/crop/x_0,y_753,w_4800,h_3007/fill/w_566,h_384,al_c,q_95,enc_auto/homepage.png" alt="" width="350" class="float-left mr-3">
+                      {% endif %}
                       <div class="media-body">
                         <h5 class="card-title">{{  item.title }}</h5>
                         <p class="card-text">{{  item.content|linebreaks|truncatewords:50 }}</p>
